@@ -52,13 +52,13 @@ namespace SearchTree
             return (SearchNode(item)!=null);
         }
 
-        public void Insert(T key)
+        public void Insert(T item)
         {
-            if (Search(key)) throw new ArgumentException("This item alredy exist");
+            if (Search(item)) throw new ArgumentException("This item alredy exist");
 
             NodeTree tempNode = root;
             Count++;
-            NodeTree node = new NodeTree(key);
+            NodeTree node = new NodeTree(item);
 
            if (InsertSearch(tempNode,node) == null)  root = node;
         }
