@@ -54,7 +54,7 @@ namespace SearchTree
 
         public void Insert(T item)
         {
-            if (Search(item)) throw new ArgumentException("This item alredy exist");
+            if (Search(item)) return;
 
             NodeTree tempNode = root;
             Count++;

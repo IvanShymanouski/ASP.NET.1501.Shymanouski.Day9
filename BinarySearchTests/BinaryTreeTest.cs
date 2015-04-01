@@ -42,6 +42,7 @@ namespace BinarySearchTests
             tree.Insert(5);
             tree.Insert(3);
             tree.Insert(7);
+            tree.Delete(12);
 
             CollectionAssert.AreEqual(new int[]{3,4,5,6,7,8,10},tree.ToArray());
         }
@@ -180,23 +181,6 @@ namespace BinarySearchTests
             tree.Delete(5);
 
             CollectionAssert.AreEqual(new int[] { 3, 4, 6, 7, 8, 10 }, tree.ToArray());
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void InsertExeptionTest()
-        {
-            BinarySearchTree<int> tree = new BinarySearchTree<int>();
-
-            tree.Insert(10);
-            tree.Insert(6);
-            tree.Insert(4);
-            tree.Insert(8);
-            tree.Insert(5);
-            tree.Insert(3);
-            tree.Insert(7);
-
-            tree.Insert(5);
         }
         #endregion
 
