@@ -95,6 +95,7 @@ namespace BinarySearchTests
 
             CollectionAssert.AreEqual(new int[] { 6, 8, 7, 4, 5, 3 }, tree.SubTree(6));
             CollectionAssert.AreEqual(new int[] { 4, 5, 3 }, tree.SubTree(4));
+            CollectionAssert.AreEqual(new int[] {  }, tree.SubTree(125));
         }
 
         [TestMethod]
