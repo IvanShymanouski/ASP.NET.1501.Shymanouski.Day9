@@ -80,6 +80,23 @@ namespace BinarySearchTests
         }
 
         [TestMethod]
+        public void SubTreeCustomCamparerTest()
+        {
+            BinarySearchTree<int> tree = new BinarySearchTree<int>((x, y) => y - x);
+
+            tree.Insert(10);
+            tree.Insert(6);
+            tree.Insert(4);
+            tree.Insert(8);
+            tree.Insert(5);
+            tree.Insert(3);
+            tree.Insert(7);
+
+            CollectionAssert.AreEqual(new int[] { 6, 8, 7, 4, 5, 3 }, tree.SubTree(6));
+            CollectionAssert.AreEqual(new int[] { 4, 5, 3 }, tree.SubTree(4));
+        }
+
+        [TestMethod]
         public void PreOrderTest()
         {
             BinarySearchTree<int> tree = new BinarySearchTree<int>();

@@ -93,6 +93,12 @@ namespace SearchTree
             if (takeNode != null) takeNode.parent = node.parent;
         }
 
+        public T[] SubTree(T item)
+        {
+            NodeTree subTreeRoot = SearchNode(item);
+            return TakeNodePreOrderWalk(subTreeRoot).Select(x=>x.Key).ToArray();
+        }
+
         /// <exception>InvalidCastException("Tree is null")</exception>
         public T Min()
         {
